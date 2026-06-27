@@ -114,7 +114,7 @@ Date Table = ADDCOLUMNS(CALENDAR(MIN(Orders[Order Date]),MAX(Orders[Order Date])
 ## 📦 Deliverables  
 
 - 📊 Dashboard → [`Sales & Profit Analytics Dashboard.pbix`](https://github.com/Abhijeet-Kanse/Sales-Profit-Analytics-Dashboard-Excel-PowerBI/blob/main/Sales-Profit-Analytics-Dashboard-Excel-PowerBI)
-- 📂 Dataset → [`GlobalMart.xls`](https://github.com/Abhijeet-Kanse/Sales-Profit-Analytics-Dashboard/blob/main/GlobalMart.xls)  
+- 📂 Dataset → [`GlobalMart.xls`](https://github.com/Abhijeet-Kanse/Sales-Profit-Analytics-Dashboard-Excel-PowerBI/blob/main/GlobalMart.xls)  
 - 📑 README.md → This report file  
 
 ---
