@@ -1,4 +1,4 @@
-## 🏬 Superstore Sales & Profit Analytics Dashboard (Excel + Power BI)
+## 🏬 Sales-Profit-Analytics-Dashboard-Excel-PowerBI (Excel + Power BI)
 
 
 
