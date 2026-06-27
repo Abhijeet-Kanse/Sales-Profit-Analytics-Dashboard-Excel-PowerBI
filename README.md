@@ -1,11 +1,8 @@
-## 🏬 Sales-Profit-Analytics-Dashboard-Excel-PowerBI (Excel + Power BI)
-
-
+## 🏬 Sales & Profit Analytics Dashboard (Excel + Power BI)
 
 ![Power BI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
 ![Excel](https://img.shields.io/badge/Excel-DataCleaning-green)
 ![DAX](https://img.shields.io/badge/DAX-Formulas-blue)
-
 
 An **interactive analytics dashboard** built using **Power BI**, with **Excel-based data cleaning** and **DAX formulas** for advanced metrics.  
 The project uncovers insights into **sales, profit, returns, and customer performance** across product categories, regions, and time.  
@@ -17,10 +14,8 @@ The project uncovers insights into **sales, profit, returns, and customer perfor
 
 <img width="1411" height="795" alt="Screenshot 2025-09-04 235057" src="https://github.com/user-attachments/assets/ff3810c3-0cf2-45f5-be4c-d2b1e3ca661c" />
 
-
-
 ## 📖 Introduction  
-The **Superstore dataset** contains detailed information about orders, sales, profit, and returns.  
+The **GlobalMart dataset** contains detailed information about orders, sales, profit, and returns.  
 This project uses **Excel for data cleaning** and **Power BI for interactive dashboards with DAX formulas** to analyze business performance.  
 
 The goal: provide **actionable insights** on **sales growth, profitability, returns, and customer trends**.  
@@ -28,7 +23,7 @@ The goal: provide **actionable insights** on **sales growth, profitability, retu
 ---
 
 ## 🧹 Data Cleaning (Excel)  
-Before importing into Power BI, the dataset (`Sample - Superstore.xls`) was cleaned in Excel by:  
+Before importing into Power BI, the dataset (`GlobalMart.xls`) was cleaned in Excel by:  
 - ✅ Removing duplicates and invalid entries  
 - ✅ Handling missing values (e.g., null profits/returns)  
 - ✅ Standardizing column names (`Sales`, `Profit`, `Order Date`, etc.)  
@@ -45,7 +40,7 @@ Power BI was used to create **key measures and calculations** for analysis:
 Sales = SUM('Orders'[Sales])
 Profit = SUM('Orders'[Profit])
 
-% Retruned Orders = 
+% Returned Orders = 
 VAR total_ordrs =DISTINCTCOUNT(Orders[Order ID])
 VAR Returned_orders =DISTINCTCOUNT(Returns2[Order ID])
 VAR _Prec = DIVIDE(Returned_orders,total_ordrs)
@@ -57,14 +52,15 @@ _Prec
 ```DAX
 Sales PY = CALCULATE(SUM('Orders'[Sales]), SAMEPERIODLASTYEAR('Date'[Date]))
 Profit PY = CALCULATE(SUM('Orders'[Profit]), SAMEPERIODLASTYEAR('Date'[Date]))
-%Retruned Orders PY = CALCULATE([% Retruned Orders],SAMEPERIODLASTYEAR('Date Table'[Date]))
+% Returned Orders PY = CALCULATE([% Returned Orders],SAMEPERIODLASTYEAR('Date Table'[Date]))
+```
 
 - **Year-over-Year (vs PY) Calculations**  
 ```DAX
 vs PY - Sales = [Sales] - [Sales PY]
 vs PY - Profit = [Profit] - [Profit PY]
-vs PY - % Returned Orders = 
-[% Retruned Orders] -[%Retruned Orders PY]
+vs PY - % Returned Orders = [% Returned Orders] - [% Returned Orders PY]
+```
 
 - **Date Table for Time Intelligence**  
 ```DAX
@@ -117,8 +113,8 @@ Date Table = ADDCOLUMNS(CALENDAR(MIN(Orders[Order Date]),MAX(Orders[Order Date])
 
 ## 📦 Deliverables  
 
-- 📊 Dashboard → [`Super_store_analytics_dashboard_2.pbix` ](https://github.com/Abhijeet-Kanse/Superstore-Sales-Analytics-Excel-PowerBI/blob/main/Super_store_analytics_dashboard_2.pbix) 
-- 📂 Dataset → [`Superstore.xls`](https://github.com/Abhijeet-Kanse/Superstore-Sales-Analytics-Excel-PowerBI/blob/main/Superstore.xls)   
+- 📊 Dashboard → [`GlobalMart_analytics_dashboard.pbix`](https://github.com/Abhijeet-Kanse/Sales-Profit-Analytics-Dashboard/blob/main/GlobalMart_analytics_dashboard.pbix)  
+- 📂 Dataset → [`GlobalMart.xls`](https://github.com/Abhijeet-Kanse/Sales-Profit-Analytics-Dashboard/blob/main/GlobalMart.xls)  
 - 📑 README.md → This report file  
 
 ---
@@ -133,4 +129,4 @@ The findings enable stakeholders to:
 - Reduce the impact of **returns**  
 - Make **data-driven strategic decisions** for sustainable growth.  
 
-📌 This approach can be scaled to **real-world retail & e-commerce analytics** for pricing, supply chain, and customer segmentation. 
+📌 This approach can be scaled to **real-world retail & e-commerce analytics** for pricing, supply chain, and customer segmentation.
